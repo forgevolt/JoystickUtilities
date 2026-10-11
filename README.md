@@ -30,10 +30,12 @@ No other library is needed.
 
 ## Tested hardware
 
-| | Stick | Axes | Used in |
-|---|---|---|---|
-| <img src="docs/fj08k-s.jpg" width="180" alt="FJ08K-S thumb stick"> | **FJ08K-S** thumb stick (2 × B10K potentiometer, push button) | 2 | [VectorArcade](https://github.com/forgevolt/VectorArcade) |
-| <img src="docs/jh-d400b-m4.jpg" width="180" alt="JH-D400B-M4 joystick"> | **JH-D400B-M4** 4D joystick (X, Y, twist, push button, 10 kΩ) | 3 | [Transmitter](https://github.com/forgevolt/Transmitter) |
+| | FJ08K-S | JH-D400B-M4 |
+|---|---|---|
+| | <img src="docs/fj08k-s.jpg" width="180" alt="FJ08K-S thumb stick"> | <img src="docs/jh-d400b-m4.jpg" width="180" alt="JH-D400B-M4 joystick"> |
+| **Type** | thumb stick, 2 × B10K potentiometer, push button | 4D joystick, 10 kΩ potentiometers, push button |
+| **Axes** | 2 (X, Y) | 3 (X, Y, twist) |
+| **Used in** | [VectorArcade](https://github.com/forgevolt/VectorArcade) | [Transmitter](https://github.com/forgevolt/Transmitter) |
 
 Any stick with one potentiometer per axis works. The push buttons are ordinary switches and are
 not read by this library.
