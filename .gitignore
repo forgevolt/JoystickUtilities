@@ -1,0 +1,20 @@
+# Private review notes, never published
+do_not_publish/
+
+# macOS
+.DS_Store
+
+# Arduino IDE build output
+build/
+*.bin
+*.elf
+*.map
+
+# Host tests
+test/test_main
+test/example_*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.theia-workspace

@@ -1,0 +1,7 @@
+# Editor settings - see https://editorconfig.org
+root = true
+
+[*.{c,cpp,h,ino}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true

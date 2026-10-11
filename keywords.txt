@@ -1,0 +1,48 @@
+#######################################
+# Syntax coloring for JoystickUtilities
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+joystickutilities	KEYWORD1
+AnalogAxis	KEYWORD1
+AnalogConfig	KEYWORD1
+AxisCalibration	KEYWORD1
+Joystick	KEYWORD1
+CalibrationResult	KEYWORD1
+CenterSampler	KEYWORD1
+RangeTracker	KEYWORD1
+DirectionKeys	KEYWORD1
+DirectionConfig	KEYWORD1
+ReadFunction	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+readRaw	KEYWORD2
+isUsable	KEYWORD2
+setCalibration	KEYWORD2
+resetCalibration	KEYWORD2
+calibration	KEYWORD2
+getX	KEYWORD2
+getY	KEYWORD2
+getZ	KEYWORD2
+isUp	KEYWORD2
+isDown	KEYWORD2
+isLeft	KEYWORD2
+isRight	KEYWORD2
+setActive	KEYWORD2
+isActive	KEYWORD2
+allAccepted	KEYWORD2
+saveCalibration	KEYWORD2
+loadCalibration	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+cMIN	LITERAL1
+cMAX	LITERAL1

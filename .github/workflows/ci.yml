@@ -1,0 +1,55 @@
+# Checks every push and pull request:
+#   host-tests  the checks in test/ and a run of every example on a PC, as C++11 and C++17
+#   lint        arduino-lint, the same check the Library Manager runs on submission
+#   compile     every example on ESP32 boards with cores 3.x and 2.0.17, with all warnings
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        std: [c++11, c++17]
+    steps:
+      - uses: actions/checkout@v7
+      - run: make -C test run examples STD=${{ matrix.std }}
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: arduino/arduino-lint-action@v3
+        with:
+          library-manager: submit   # change to "update" once the library is in the Library Manager
+          compliance: strict
+
+  compile:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - fqbn: esp32:esp32:esp32        # the core the Transmitter uses
+            core: "3.3.12"
+          - fqbn: esp32:esp32:esp32s3
+            core: "3.3.12"
+          - fqbn: esp32:esp32:esp32        # the core VectorArcade needs
+            core: "2.0.17"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.fqbn }}
+          platforms: |
+            - name: esp32:esp32
+              source-url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+              version: ${{ matrix.core }}
+          libraries: |
+            - source-path: ./
+          sketch-paths: |
+            - examples
+          cli-compile-flags: |
+            - --warnings
+            - all
